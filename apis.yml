@@ -1,23 +1,68 @@
 aid: beato
+
 name: Beato
-description: 'Beato is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: Beato is a financial technology company that provides a platform for managing and automating payment workflows. The company focuses
+  on simplifying transaction processing for businesses, offering tools for invoicing, recurring payments, and integration with various banking
+  services. As a stub entry in the API Evangelist network, Beato’s profile is being expanded to include detailed API documentation and operational
+  metadata as part of the enrichment pipeline.
+
 url: https://raw.githubusercontent.com/api-evangelist/beato/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-27 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-27'
+
 modified: '2026-09-27'
+
 tags:
 - Company
-apis: []
+- FinTech
+- Payments
+- Automation
+- SaaS
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/beato-hosts.yml
+- type: Vendors
+  url: vendors/beato-vendors.yml
+- type: DomainSecurity
+  url: security/beato-domain-security.yml
 - type: Website
   url: https://equityzen.com/company/beato
+
+apis:
+- name: Beato API
+  description: Beato provides payment workflow automation APIs.
+  humanURL: https://beato.com
+  baseURL: null
+  aid: beato:beato-api
+
+x-coverage:
+  state: unreadable
+  reason: js-rendered-docs
+  detail: beato.com returns a bot challenge page with no machine‑readable API spec.
+  evidence:
+  - url: https://beato.com
+    status: 202
+  checked: '2026-09-27'
+x-enrichment:
+  date: '2026-09-27'
+  status: enriched
+  artifacts_added: 4
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local
